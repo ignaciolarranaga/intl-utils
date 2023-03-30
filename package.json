@@ -1,0 +1,37 @@
+{
+  "name": "intl-utils",
+  "version": "1.0.0",
+  "description": "Utilities for internationalization",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ignaciolarranaga/intl-utils.git"
+  },
+  "keywords": [
+    "i18n",
+    "internationaization",
+    "utilities"
+  ],
+  "files": [
+    "package.json",
+    "dist/index.js",
+    "dist/index.d.ts"
+  ],
+  "publishConfig": {
+    "directory": "dist"
+  },
+  "author": "Ignacio Larrañaga <ignaciolarranaga@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ignaciolarranaga/intl-utils/issues"
+  },
+  "homepage": "https://github.com/ignaciolarranaga/intl-utils#readme",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "typescript": "^5.0.2"
+  }
+}
