@@ -27,4 +27,4 @@ module.exports = {
 
   // An alternative API to setting the NODE_PATH env variable, modulePaths is an array of absolute paths to additional locations to search when resolving modules.
   modulePaths: ['<rootDir>/src'],
-};
+}
