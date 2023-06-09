@@ -4,16 +4,27 @@ export interface Translations {
   }
 }
 
-export type TranslateFunction = (text: string, customLocale?: string) => string
+export type TranslateFunction = (
+  text: string,
+  ...customLocales: string[]
+) => string
 
 export const useTranslation = (
   translations: Translations,
-  defaultLocale?: string
+  ...defaultLocales: string[]
 ): TranslateFunction => {
-  return (text: string, customLocale?: string) => {
-    const locale = customLocale || defaultLocale
-    return locale && translations[locale] && translations[locale][text]
-      ? translations[locale][text]
-      : text
+  return (text: string, ...customLocales: string[]) => {
+    const locales = [
+      ...(customLocales ? customLocales : []),
+      ...(defaultLocales ? defaultLocales : []),
+    ]
+
+    for (const locale of locales) {
+      if (translations[locale] && translations[locale][text]) {
+        return translations[locale][text]
+      }
+    }
+
+    return text
   }
 }
