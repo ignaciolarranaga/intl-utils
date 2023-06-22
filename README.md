@@ -56,6 +56,7 @@ Where _TRANSLATED_KEY_ is the translation of _KEY_ on _LOCALE_
 ## Release Process
 
 - Commit your changes
+- Test your changes `npm test`
 - Adjust the version, e.g.: `npm version patch`
 - Build `npm run build`
 - Publish `npm publish`
