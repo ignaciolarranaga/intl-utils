@@ -19,6 +19,20 @@ const SAMPLE_TRANSLATIONS = {
 }
 
 describe('t', () => {
+  it('must be able to omit the locale', () => {
+    // Arrange
+    const t = useTranslation(SAMPLE_TRANSLATIONS)
+
+    expect(t('Hello')).toBe('Hello') // spellchecker: disable-line
+  })
+
+  it('must be able to pass undefined as locale', () => {
+    // Arrange
+    const t = useTranslation(SAMPLE_TRANSLATIONS, undefined)
+
+    expect(t('Hello')).toBe('Hello') // spellchecker: disable-line
+  })
+
   it('must get the translation in the default locale when not override', () => {
     // Arrange
     const t = useTranslation(SAMPLE_TRANSLATIONS, 'es')

@@ -11,12 +11,16 @@ export type TranslateFunction = (
 
 export const useTranslation = (
   translations: Translations,
-  ...defaultLocales: string[]
+  ...defaultLocales: (string | undefined)[]
 ): TranslateFunction => {
-  return (text: string, ...customLocales: string[]) => {
-    const locales = [
-      ...(customLocales ? customLocales : []),
-      ...(defaultLocales ? defaultLocales : []),
+  return (text: string, ...customLocales: (string | undefined)[]) => {
+    const locales: string[] = [
+      ...((customLocales
+        ? customLocales.filter(locale => locale != undefined)
+        : []) as string[]),
+      ...((defaultLocales
+        ? defaultLocales.filter(locale => locale != undefined)
+        : []) as string[]),
     ]
 
     for (const locale of locales) {
