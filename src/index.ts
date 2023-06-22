@@ -6,7 +6,7 @@ export interface Translations {
 
 export type TranslateFunction = (
   text: string,
-  ...customLocales: string[]
+  ...customLocales: (string | undefined)[]
 ) => string
 
 export const useTranslation = (
