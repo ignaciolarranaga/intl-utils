@@ -1,6 +1,6 @@
 {
   "name": "intl-utils",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "Utilities for internationalization",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
