@@ -6,12 +6,12 @@ An example with NextJS will be as follows:
 
 ```
 import withRouter, { WithRouterProps } from 'next/dist/client/with-router';
-import { useTranslation } from 'intl-utils';
+import buildTranslateFunction from 'intl-utils';
 
 import translations from './translations';
 
 function HomePage(props: WithRouterProps) {
-  const t = useTranslation(translations, props.router.locale);
+  const t = buildTranslateFunction(translations, props.router.locale);
 
   return <p>{t('Hello World')}</p>
 }

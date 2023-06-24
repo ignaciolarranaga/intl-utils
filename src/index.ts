@@ -9,10 +9,10 @@ export type TranslateFunction = (
   ...customLocales: (string | undefined)[]
 ) => string
 
-export const useTranslation = (
+export default function translate(
   translations: Translations,
   ...defaultLocales: (string | undefined)[]
-): TranslateFunction => {
+): TranslateFunction {
   return (text: string, ...customLocales: (string | undefined)[]) => {
     const locales: string[] = [
       ...((customLocales
